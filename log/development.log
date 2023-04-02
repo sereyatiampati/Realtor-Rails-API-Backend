@@ -19176,3 +19176,101 @@ Processing by UsersController#show as */*
 Completed 401 Unauthorized in 8ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 853)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mListing Destroy (0.3ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 1]]
+  [1m[36mListing Destroy (0.1ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 3]]
+  [1m[36mListing Destroy (0.1ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (45.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Load (0.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (46.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[36mListing Destroy (0.3ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 6]]
+  [1m[36mListing Destroy (0.1ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 7]]
+  [1m[36mListing Destroy (0.1ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 8]]
+  [1m[36mListing Destroy (0.1ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 9]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (46.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Load (0.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."user_id" = ?[0m  [["user_id", 7]]
+  [1m[36mListing Destroy (0.3ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 10]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kim K"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Kim K"], ["email", "kim@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 23:43:39.097537"], ["updated_at", "2023-04-01 23:43:39.097537"]]
+  [1m[36mTRANSACTION (46.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "wilson@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Wilson Kinyua"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Wilson Kinyua"], ["email", "wilson@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 23:43:39.424287"], ["updated_at", "2023-04-01 23:43:39.424287"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "donald@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Donald T"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Donald T"], ["email", "donald@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 23:43:39.750147"], ["updated_at", "2023-04-01 23:43:39.750147"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Beverly Hills Lakeside"], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Beverly Hills Lakeside"], ["property_type", "Lease"], ["area_in_sqm", 3334], ["beds", 5], ["baths", 6], ["garages", 4], ["created_at", "2023-04-01 23:43:39.806061"], ["updated_at", "2023-04-01 23:43:39.806061"], ["price", 900000], ["user_id", 8], ["image_url", "https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070__340.jpg"]]
+  [1m[36mTRANSACTION (47.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Washington 200A Heaven Lane "], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Washington 200A Heaven Lane "], ["property_type", "Sell"], ["area_in_sqm", 3289], ["beds", 7], ["baths", 3], ["garages", 3], ["created_at", "2023-04-01 23:43:39.861113"], ["updated_at", "2023-04-01 23:43:39.861113"], ["price", 800000], ["user_id", 8], ["image_url", "https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041__340.jpg"]]
+  [1m[36mTRANSACTION (46.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Cottage Texas Lane"], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Cottage Texas Lane"], ["property_type", "Rent"], ["area_in_sqm", 3524], ["beds", 8], ["baths", 6], ["garages", 4], ["created_at", "2023-04-01 23:43:39.914148"], ["updated_at", "2023-04-01 23:43:39.914148"], ["price", 400000], ["user_id", 8], ["image_url", "https://cdn.pixabay.com/photo/2017/11/16/19/29/cottage-2955582__340.jpg"]]
+  [1m[36mTRANSACTION (47.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "LA Magic-place Road"], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "LA Magic-place Road"], ["property_type", "Rent"], ["area_in_sqm", 3941], ["beds", 8], ["baths", 7], ["garages", 6], ["created_at", "2023-04-01 23:43:39.967563"], ["updated_at", "2023-04-01 23:43:39.967563"], ["price", 590000], ["user_id", 9], ["image_url", "https://cdn.pixabay.com/photo/2016/04/18/08/50/kitchen-1336160__340.jpg"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Cleveland Ohio 101C Lane "], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Cleveland Ohio 101C Lane "], ["property_type", "Lease"], ["area_in_sqm", 2501], ["beds", 9], ["baths", 3], ["garages", 5], ["created_at", "2023-04-01 23:43:40.020704"], ["updated_at", "2023-04-01 23:43:40.020704"], ["price", 450000], ["user_id", 9], ["image_url", "https://cdn.pixabay.com/photo/2014/07/10/17/18/large-home-389271__340.jpg"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Little Rock Arkansas 101C Lane "], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Little Rock Arkansas 101C Lane "], ["property_type", "Sell"], ["area_in_sqm", 1122], ["beds", 9], ["baths", 7], ["garages", 2], ["created_at", "2023-04-01 23:43:40.074272"], ["updated_at", "2023-04-01 23:43:40.074272"], ["price", 900000], ["user_id", 9], ["image_url", "https://cdn.pixabay.com/photo/2016/08/05/17/32/new-1572747__340.jpg"]]
+  [1m[36mTRANSACTION (46.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Florida Home Villa Road"], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Florida Home Villa Road"], ["property_type", "Sell"], ["area_in_sqm", 3740], ["beds", 9], ["baths", 7], ["garages", 4], ["created_at", "2023-04-01 23:43:40.127345"], ["updated_at", "2023-04-01 23:43:40.127345"], ["price", 200000], ["user_id", 10], ["image_url", "https://cdn.pixabay.com/photo/2015/11/06/11/39/single-family-home-1026368__340.jpg"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Homely Villa Kilimani Road"], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Homely Villa Kilimani Road"], ["property_type", "Lease"], ["area_in_sqm", 2163], ["beds", 8], ["baths", 5], ["garages", 4], ["created_at", "2023-04-01 23:43:40.181076"], ["updated_at", "2023-04-01 23:43:40.181076"], ["price", 400000], ["user_id", 10], ["image_url", "https://cdn.pixabay.com/photo/2017/06/16/15/58/luxury-home-2409518__340.jpg"]]
+  [1m[36mTRANSACTION (46.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListing Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "listings" WHERE "listings"."address" = ? LIMIT ?[0m  [["address", "Architecture Road New York"], ["LIMIT", 1]]
+  [1m[36mListing Create (0.3ms)[0m  [1m[32mINSERT INTO "listings" ("address", "property_type", "area_in_sqm", "beds", "baths", "garages", "created_at", "updated_at", "price", "user_id", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Architecture Road New York"], ["property_type", "Rent"], ["area_in_sqm", 3760], ["beds", 4], ["baths", 7], ["garages", 3], ["created_at", "2023-04-01 23:43:40.233520"], ["updated_at", "2023-04-01 23:43:40.233520"], ["price", 500000], ["user_id", 10], ["image_url", "https://cdn.pixabay.com/photo/2016/06/24/11/46/architecture-1477099__340.jpg"]]
+  [1m[36mTRANSACTION (46.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2023-04-02 02:46:43 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.9ms | Allocations: 705)
+Completed 200 OK in 21ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3315)
+
+
+Started GET "/listing" for ::1 at 2023-04-02 02:46:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/listing"):
+  
+Started GET "/listings" for ::1 at 2023-04-02 02:46:55 +0300
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  ↳ app/controllers/listings_controller.rb:12:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
+Completed 200 OK in 110ms (Views: 93.9ms | ActiveRecord: 1.0ms | Allocations: 26395)
+
+
